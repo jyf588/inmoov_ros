@@ -91,7 +91,8 @@
         <xacro:frame_color/>
       </visual>
       <collision>
-        <mesh filename="package://inmoov_meshes/meshes/index3_1.stl" scale="0.001 0.001 0.001"/>
+        <geometry>
+          <mesh filename="package://inmoov_meshes/meshes/index3_1.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0"/>
       </collision>
