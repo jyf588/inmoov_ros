@@ -9,8 +9,8 @@ joints:
     servoPin:       5
     minPulse:       1401
     maxPulse:       1901
-    minGoal:        180.0
-    maxGoal:        0.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -23,8 +23,8 @@ joints:
     servoPin:       9
     minPulse:       550
     maxPulse:       2500
-    minGoal:        45.0
-    maxGoal:        -135.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -37,8 +37,8 @@ joints:
     servoPin:       1
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -51,8 +51,8 @@ joints:
     servoPin:       3
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -65,8 +65,8 @@ joints:
     servoPin:       5
     minPulse:       950
     maxPulse:       1850
-    minGoal:        -15.0
-    maxGoal:        15.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -79,8 +79,8 @@ joints:
     servoPin:       4
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        65.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -93,8 +93,8 @@ joints:
     servoPin:       5
     minPulse:       1000
     maxPulse:       1550
-    minGoal:        0.0
-    maxGoal:        -180.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -107,8 +107,8 @@ joints:
     servoPin:       2
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -121,8 +121,8 @@ joints:
     servoPin:       4
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        65.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -135,8 +135,8 @@ joints:
     servoPin:       6
     minPulse:       480
     maxPulse:       1400
-    minGoal:        -15.0
-    maxGoal:        -85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -149,8 +149,8 @@ joints:
     servoPin:       2
     minPulse:       550
     maxPulse:       2450
-    minGoal:        0.0
-    maxGoal:        5.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -163,8 +163,8 @@ joints:
     servoPin:       2
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -177,8 +177,8 @@ joints:
     servoPin:       6
     minPulse:       550
     maxPulse:       1500
-    minGoal:        -15.0
-    maxGoal:        -80.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -191,8 +191,8 @@ joints:
     servoPin:       0
     minPulse:       1201
     maxPulse:       1800
-    minGoal:        -30.0
-    maxGoal:        30.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -205,8 +205,8 @@ joints:
     servoPin:       1
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -219,8 +219,8 @@ joints:
     servoPin:       9
     minPulse:       550
     maxPulse:       2500
-    minGoal:        45.0
-    maxGoal:        -135.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -233,8 +233,8 @@ joints:
     servoPin:       4
     minPulse:       950
     maxPulse:       1700
-    minGoal:        -20.0
-    maxGoal:        20.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -247,8 +247,8 @@ joints:
     servoPin:       3
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -261,8 +261,8 @@ joints:
     servoPin:       0
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -275,8 +275,8 @@ joints:
     servoPin:       3
     minPulse:       550
     maxPulse:       2450
-    minGoal:        -100.0
-    maxGoal:        90.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -289,8 +289,8 @@ joints:
     servoPin:       0
     minPulse:       500
     maxPulse:       2450
-    minGoal:        -5.0
-    maxGoal:        85.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -303,8 +303,8 @@ joints:
     servoPin:       8
     minPulse:       550
     maxPulse:       1300
-    minGoal:        5.0
-    maxGoal:        60.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -317,8 +317,8 @@ joints:
     servoPin:       7
     minPulse:       500
     maxPulse:       2500
-    minGoal:        -90.0
-    maxGoal:        90.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -331,8 +331,8 @@ joints:
     servoPin:       6
     minPulse:       1325
     maxPulse:       1775
-    minGoal:        15.0
-    maxGoal:        -15.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -345,8 +345,8 @@ joints:
     servoPin:       7
     minPulse:       650
     maxPulse:       2450
-    minGoal:        90.0
-    maxGoal:        -90.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -359,8 +359,8 @@ joints:
     servoPin:       7
     minPulse:       700
     maxPulse:       2400
-    minGoal:        -90.0
-    maxGoal:        90.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -373,8 +373,8 @@ joints:
     servoPin:       1
     minPulse:       1300
     maxPulse:       1925
-    minGoal:        15.0
-    maxGoal:        -15.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
@@ -387,8 +387,8 @@ joints:
     servoPin:       8
     minPulse:       550
     maxPulse:       1100
-    minGoal:        -5.0
-    maxGoal:        -60.0
+    minGoal:        -180.0
+    maxGoal:        180.0
     rest:           0.0
     maxSpeed:       0.0
     smoothing:      0
