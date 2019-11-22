@@ -15,6 +15,10 @@
   <xacro:include filename="$(find inmoov_description)/urdf/asmFace.urdf.xacro" />
   <xacro:include filename="$(find inmoov_description)/urdf/asmArm.urdf.xacro" />
 
+    <xacro:include filename="$(find sr_description)/materials.urdf.xacro"/>
+    <xacro:include filename="$(find sr_description)/hand/xacro/full_hand.urdf.xacro"/>
+    <xacro:include filename="$(find sr_description)/other/xacro/gazebo/gazebo.urdf.xacro"/>
+
   <link name="world"/>
 
   <joint name="fixed" type="fixed">
@@ -104,7 +108,7 @@
    <child link="r_shoulder_base_link"/>
   </joint>
 
-  <link name="r_hand_link">
+  <!-- <link name="r_hand_link">
     <visual>
       <geometry>
         <cylinder length="0.11" radius="0.06"/>
@@ -112,15 +116,20 @@
       <origin rpy="0 0 0" xyz="0 0 0.055"/>
       <xacro:base_color/>
     </visual>
-  </link>
+  </link> -->
 
-  <joint name="r_wrist_roll_joint" type="revolute">
-   <axis xyz="0 0 1"/>
-   <limit effort="1000.0" lower="${r_wrist_roll_joint_lower}" upper="${r_wrist_roll_joint_upper}" velocity="${r_wrist_roll_joint_velocity}" />
-   <origin rpy="0 0 0" xyz="-0.0144 0.01  -0.2885"/>
-   <parent link="r_forearm_link"/>
-   <child link="r_hand_link"/>
-  </joint>
+  <!-- shadow hand -->
+    <!-- hand with cylindrical base drifts in gazebo, attach it to the world -->
+    <link name="r_hand_link" />
+    <joint name="r_wrist_roll_joint" type="revolute">
+        <axis xyz="0 0 1"/>   
+        <limit effort="1000.0" lower="${r_wrist_roll_joint_lower}" upper="${r_wrist_roll_joint_upper}" velocity="${r_wrist_roll_joint_velocity}" />  
+        <parent link="r_forearm_link" />
+        <child link="r_hand_link" />
+        <origin rpy="3.14 0 0" xyz="-0.0144 0.01  -0.2885"/>
+    </joint>
+    <xacro:shadowhand muscletrans="false" muscle="false" hand_type="hand_e" bio="false" bt_sp="false"
+                      ubi="false" eli="false" reflect="1.0" prefix="rh_" lf="true" parent="r_hand_link"/>
 
   <xacro:arm side="l" flip="-1" covers="yes" />
 
