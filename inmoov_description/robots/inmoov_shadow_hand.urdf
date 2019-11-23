@@ -915,6 +915,7 @@
       <inertia ixx="0.536349632" ixy="0.0009665334375" ixz="-0.069306768" iyy="0.625805568" iyz="0.0005666358125" izz="0.44191648"/>
     </inertial>
   </link>
+  <link name="r_forearm_link_aux"/>
   <link name="r_forearm_link">
     <visual>
       <geometry>
@@ -932,23 +933,30 @@
   </link>
   <joint name="r_shoulder_lift_joint" type="revolute">
     <axis xyz="0 1 0"/>
-    <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
+    <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="1745.32925199"/>
     <origin rpy="0 0 0" xyz="0 -0.012 -0.04"/>
     <parent link="r_shoulder_base_link"/>
     <child link="r_shoulder_link"/>
   </joint>
   <joint name="r_upper_arm_roll_joint" type="revolute">
     <axis xyz="0 0 1"/>
-    <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
-    <origin rpy="0 0 0" xyz="0 -0.066 -0.060"/>
+    <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="1745.32925199"/>
+    <origin rpy="0 0 0" xyz="0 -0.066 -0.06"/>
     <parent link="r_shoulder_link"/>
     <child link="r_bicep_link"/>
   </joint>
   <joint name="r_elbow_flex_joint" type="revolute">
     <axis xyz="0 1 0"/>
-    <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
-    <origin rpy="0 0 0" xyz="-0.0278 0 -0.2235"/>
+    <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="1745.32925199"/>
+    <origin rpy="0 0 0" xyz="-0.03 0 -0.225"/>
     <parent link="r_bicep_link"/>
+    <child link="r_forearm_link_aux"/>
+  </joint>
+  <joint name="r_elbow_roll_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="1745.32925199"/>
+    <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
+    <parent link="r_forearm_link_aux"/>
     <child link="r_forearm_link"/>
   </joint>
   <joint name="r_bicepcover_joint" type="fixed">
@@ -958,8 +966,8 @@
   </joint>
   <joint name="r_shoulder_out_joint" type="revolute">
     <axis xyz="1 0 0"/>
-    <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
-    <origin rpy="0 0 0" xyz="0 -0.143 0.298"/>
+    <limit effort="1000.0" lower="-3.14159265359" upper="0" velocity="1745.32925199"/>
+    <origin rpy="0 0 0" xyz="0 -0.14 0.3"/>
     <parent link="torso_link"/>
     <child link="r_shoulder_base_link"/>
   </joint>
@@ -975,12 +983,18 @@
   <!-- shadow hand -->
   <!-- hand with cylindrical base drifts in gazebo, attach it to the world -->
   <link name="r_hand_link"/>
-  <joint name="r_wrist_roll_joint" type="revolute">
-    <axis xyz="0 0 1"/>
-    <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
+  <!-- <joint name="r_wrist_roll_joint" type="revolute">
+        <axis xyz="0 0 1"/>   
+        <limit effort="1000.0" lower="${r_wrist_roll_joint_lower}" upper="${r_wrist_roll_joint_upper}" velocity="${r_wrist_roll_joint_velocity}" />  
+        <parent link="r_forearm_link" />
+        <child link="r_hand_link" />
+        <origin rpy="3.14 0 0" xyz="-0.0144 0.01  -0.2885"/>
+    </joint> -->
+  <!-- move wrist roll to elbow roll for now -->
+  <joint name="r_wrist_roll_joint" type="fixed">
     <parent link="r_forearm_link"/>
     <child link="r_hand_link"/>
-    <origin rpy="3.14 0 0" xyz="-0.0144 0.01  -0.2885"/>
+    <origin rpy="3.14159265359 0 0" xyz="-0.015 0.01  -0.3"/>
   </joint>
   <link name="rh_wrist">
     <inertial>
@@ -1033,9 +1047,9 @@
   <joint name="rh_WRJ2" type="revolute">
     <parent link="r_hand_link"/>
     <child link="rh_wrist"/>
-    <origin rpy="0 0 0" xyz="0 -0.010 0.0"/>
+    <origin rpy="0 0 0" xyz="0 0.0 0.0"/>
     <axis xyz="0 1.0 0"/>
-    <limit effort="10" lower="-0.523598775598" upper="0.174532925199" velocity="2.0"/>
+    <limit effort="10" lower="-1.57079632679" upper="1.57079632679" velocity="2.0"/>
     <dynamics damping="0.1"/>
   </joint>
   <gazebo reference="rh_WRJ2">
@@ -1128,9 +1142,9 @@
   <joint name="rh_WRJ1" type="revolute">
     <parent link="rh_wrist"/>
     <child link="rh_palm"/>
-    <origin rpy="0 0 0" xyz="0 0 0.034"/>
+    <origin rpy="0 0 0" xyz="0 0 0.03"/>
     <axis xyz="1 0 0"/>
-    <limit effort="30" lower="-0.698131700798" upper="0.488692190558" velocity="2.0"/>
+    <limit effort="30" lower="-1.57079632679" upper="1.57079632679" velocity="2.0"/>
     <dynamics damping="0.1"/>
   </joint>
   <gazebo reference="rh_WRJ1">
@@ -2667,6 +2681,7 @@
       <inertia ixx="0.536349632" ixy="0.0009665334375" ixz="-0.069306768" iyy="0.625805568" iyz="0.0005666358125" izz="0.44191648"/>
     </inertial>
   </link>
+  <link name="l_forearm_link_aux"/>
   <link name="l_forearm_link">
     <visual>
       <geometry>
@@ -2692,15 +2707,22 @@
   <joint name="l_upper_arm_roll_joint" type="revolute">
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
-    <origin rpy="0 0 0" xyz="0 0.066 -0.060"/>
+    <origin rpy="0 0 0" xyz="0 0.066 -0.06"/>
     <parent link="l_shoulder_link"/>
     <child link="l_bicep_link"/>
   </joint>
   <joint name="l_elbow_flex_joint" type="revolute">
     <axis xyz="0 1 0"/>
     <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
-    <origin rpy="0 0 0" xyz="-0.0278 0 -0.2235"/>
+    <origin rpy="0 0 0" xyz="-0.03 0 -0.225"/>
     <parent link="l_bicep_link"/>
+    <child link="l_forearm_link_aux"/>
+  </joint>
+  <joint name="l_elbow_roll_joint" type="revolute">
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
+    <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
+    <parent link="l_forearm_link_aux"/>
     <child link="l_forearm_link"/>
   </joint>
   <joint name="l_bicepcover_joint" type="fixed">
@@ -2711,7 +2733,7 @@
   <joint name="l_shoulder_out_joint" type="revolute">
     <axis xyz="1 0 0"/>
     <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
-    <origin rpy="0 0 0" xyz="0 0.143 0.298"/>
+    <origin rpy="0 0 0" xyz="0 0.14 0.3"/>
     <parent link="torso_link"/>
     <child link="l_shoulder_base_link"/>
   </joint>

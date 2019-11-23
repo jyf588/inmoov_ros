@@ -103,7 +103,7 @@
   <joint name="r_shoulder_out_joint" type="revolute">
    <axis xyz="1 0 0"/>
    <limit effort="1000.0" lower="${r_shoulder_out_joint_lower}" upper="${r_shoulder_out_joint_upper}" velocity="${r_shoulder_out_joint_velocity}" />
-   <origin rpy="0 0 0" xyz="0 -0.143 0.298"/>
+   <origin rpy="0 0 0" xyz="0 -0.14 0.3"/>
    <parent link="torso_link"/>
    <child link="r_shoulder_base_link"/>
   </joint>
@@ -121,12 +121,19 @@
   <!-- shadow hand -->
     <!-- hand with cylindrical base drifts in gazebo, attach it to the world -->
     <link name="r_hand_link" />
-    <joint name="r_wrist_roll_joint" type="revolute">
+    <!-- <joint name="r_wrist_roll_joint" type="revolute">
         <axis xyz="0 0 1"/>   
         <limit effort="1000.0" lower="${r_wrist_roll_joint_lower}" upper="${r_wrist_roll_joint_upper}" velocity="${r_wrist_roll_joint_velocity}" />  
         <parent link="r_forearm_link" />
         <child link="r_hand_link" />
         <origin rpy="3.14 0 0" xyz="-0.0144 0.01  -0.2885"/>
+    </joint> -->
+
+    <!-- move wrist roll to elbow roll for now -->
+    <joint name="r_wrist_roll_joint" type="fixed">   
+        <parent link="r_forearm_link" />
+        <child link="r_hand_link" />
+        <origin rpy="3.14159265359 0 0" xyz="-0.015 0.01  -0.3"/>
     </joint>
     <xacro:shadowhand muscletrans="false" muscle="false" hand_type="hand_e" bio="false" bt_sp="false"
                       ubi="false" eli="false" reflect="1.0" prefix="rh_" lf="true" parent="r_hand_link"/>
@@ -136,7 +143,7 @@
   <joint name="l_shoulder_out_joint" type="revolute">
    <axis xyz="1 0 0"/>
    <limit effort="1000.0" lower="${l_shoulder_out_joint_lower}" upper="${l_shoulder_out_joint_upper}" velocity="${l_shoulder_out_joint_velocity}" />
-   <origin rpy="0 0 0" xyz="0 0.143 0.298"/>
+   <origin rpy="0 0 0" xyz="0 0.14 0.3"/>
    <parent link="torso_link"/>
    <child link="l_shoulder_base_link"/>
   </joint>
