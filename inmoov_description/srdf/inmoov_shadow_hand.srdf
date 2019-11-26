@@ -29,4 +29,9 @@
     <disable_collisions link1="r_shoulder_link" link2="r_bicep_link" reason="Adjacent" />
     <disable_collisions link1="r_shoulder_base_link" link2="r_shoulder_link" reason="Adjacent" />
     <disable_collisions link1="torso_link" link2="r_shoulder_base_link" reason="Adjacent" />
+    <!-- <disable_collisions link1="torso_link" link2="r_shoulder_link" reason="Never" />
+    <disable_collisions link1="torso_link" link2="r_bicep_link" reason="Never" />
+    <disable_collisions link1="torso_link" link2="r_bicepcover_link" reason="Never" /> -->
+    <!-- <disable_collisions link1="r_shoulder_link" link2="r_bicepcover_link" reason="Never" />
+    <disable_collisions link1="r_shoulder_base_link" link2="r_bicepcover_link" reason="Never" /> -->
 </robot>

@@ -2,6 +2,9 @@
 
 <robot name="inmoov" xmlns:xacro="http://ros.org/wiki/xacro">
 
+ <xacro:property name="M_PI" value="3.1415926535897931" />
+ <!-- usage: e.g. ${M_PI/4} -->
+
 <xacro:macro name="arm" params="side flip covers">
 
   <link name="${side}_shoulder_base_link">
@@ -68,6 +71,12 @@
       <origin rpy="0 0 0" xyz="${flip * 0.001} 0 0"/>
       <xacro:cover_color/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.28" radius="0.045"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.00 0 -0.14"/>
+    </collision>
     <xacro:if value="${side == 'l'}">
       <xacro:l_forearm_inertial/>
     </xacro:if>
@@ -134,12 +143,6 @@
     <child link="${side}_bicepcover_link"/>
   </joint>
 
-
-
-
-
 </xacro:macro>
-
-
 
 </robot>

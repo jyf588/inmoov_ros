@@ -7,13 +7,14 @@ bringup:
 
 joints:
 
+  # changed to elbow roll in our definition
   l_wrist_roll_joint:
     bus:            1
     servoPin:       5
     minPulse:       1401
     maxPulse:       1901
-    minGoal:        -180.0
-    maxGoal:        180.0
+    minGoal:        -90.0
+    maxGoal:        90.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -26,8 +27,8 @@ joints:
     servoPin:       9
     minPulse:       550
     maxPulse:       2500
-    minGoal:        -180.0
-    maxGoal:        180.0
+    minGoal:        -90.0
+    maxGoal:        90.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -90,14 +91,15 @@ joints:
     sensorPin:      21
     minSensor:      1000
     maxSensor:      3400
-
+  
+  # changed to elbow roll in our definition
   r_wrist_roll_joint:
     bus:            2
     servoPin:       5
     minPulse:       1000
     maxPulse:       1550
-    minGoal:        -180.0
-    maxGoal:        180.0
+    minGoal:        -90.0
+    maxGoal:        90.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -139,7 +141,7 @@ joints:
     minPulse:       480
     maxPulse:       1400
     minGoal:        -180.0
-    maxGoal:        180.0
+    maxGoal:        0.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -181,7 +183,7 @@ joints:
     minPulse:       550
     maxPulse:       1500
     minGoal:        -180.0
-    maxGoal:        180.0
+    maxGoal:        0.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -222,8 +224,8 @@ joints:
     servoPin:       9
     minPulse:       550
     maxPulse:       2500
-    minGoal:        -180.0
-    maxGoal:        180.0
+    minGoal:        -90.0
+    maxGoal:        90.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -306,8 +308,8 @@ joints:
     servoPin:       8
     minPulse:       550
     maxPulse:       1300
-    minGoal:        -180.0
-    maxGoal:        180.0
+    minGoal:        -90.0
+    maxGoal:        90.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -348,8 +350,8 @@ joints:
     servoPin:       7
     minPulse:       650
     maxPulse:       2450
-    minGoal:        -180.0
-    maxGoal:        180.0
+    minGoal:        -90.0
+    maxGoal:        90.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -362,8 +364,8 @@ joints:
     servoPin:       7
     minPulse:       700
     maxPulse:       2400
-    minGoal:        -180.0
-    maxGoal:        180.0
+    minGoal:        -90.0
+    maxGoal:        90.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
@@ -390,8 +392,8 @@ joints:
     servoPin:       8
     minPulse:       550
     maxPulse:       1100
-    minGoal:        -180.0
-    maxGoal:        180.0
+    minGoal:        -90.0
+    maxGoal:        90.0
     rest:           0.0
     maxSpeed:       100000.0
     smoothing:      0
