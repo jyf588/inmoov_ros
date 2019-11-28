@@ -478,7 +478,7 @@
       <inertia ixx="7.996578816" ixy="-0.0004753828125" ixz="-0.051810308" iyy="3.795706624" iyz="0.011253427" izz="4.511691776"/>
     </inertial>
   </link>
-  <joint name="waist_pan_joint" type="revolute">
+  <joint name="waist_pan_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
     <origin rpy="0 0 0" xyz="0 0 1.152"/>
@@ -490,7 +490,7 @@
     <parent link="top_stomach_link"/>
     <child link="disk_link"/>
   </joint>
-  <joint name="waist_roll_joint" type="revolute">
+  <joint name="waist_roll_joint" type="fixed">
     <axis xyz="1 0 0"/>
     <limit effort="1000.0" lower="-3.14159265359" upper="3.14159265359" velocity="1745.32925199"/>
     <origin rpy="0 0 0" xyz="0 0 0.11"/>
