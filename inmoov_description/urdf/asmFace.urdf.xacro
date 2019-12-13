@@ -17,9 +17,7 @@
     <xacro:face_inertial/>
   </link>
 
-  <joint name="eyes_tilt_joint" type="revolute">
-   <axis xyz="0 1 0"/>
-   <limit effort="1000.0" lower="${eyes_tilt_joint_lower}" upper="${eyes_tilt_joint_upper}" velocity="${eyes_tilt_joint_velocity}" />
+  <joint name="eyes_tilt_joint" type="fixed">
    <origin rpy="0 0 0" xyz="0 0 0"/>
    <parent link="face_link"/>
    <child link="eyesupport_link"/>
@@ -38,9 +36,7 @@
 
 <xacro:asmEye side="r"/>
 
-  <joint name="eyes_pan_joint" type="revolute">
-   <axis xyz="0 0 1"/>
-    <limit effort="1000.0" lower="${eyes_pan_joint_lower}" upper="${eyes_pan_joint_upper}" velocity="${eyes_pan_joint_velocity}" />
+  <joint name="eyes_pan_joint" type="fixed">
    <origin rpy="0 0 0" xyz="0 0.033 -0.0036"/>
    <parent link="eyesupport_link"/>
    <child link="r_eyesupport_link"/>
@@ -48,10 +44,7 @@
 
 <xacro:asmEye side="l" />
 
-  <joint name="l_eye_pan_joint" type="revolute">
-   <axis xyz="0 0 1"/>
-   <limit effort="1000.0" lower="${eyes_pan_joint_lower}" upper="${eyes_pan_joint_upper}" velocity="${eyes_pan_joint_velocity}" />
-   <mimic joint="eyes_pan_joint" multiplier="1" offset="0"/>
+  <joint name="l_eye_pan_joint" type="fixed">
    <origin rpy="0 0 0" xyz="0 -0.033 -0.0036"/>
    <parent link="eyesupport_link"/>
    <child link="l_eyesupport_link"/>

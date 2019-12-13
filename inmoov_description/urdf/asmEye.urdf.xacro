@@ -20,7 +20,7 @@
     </xacro:if>
   </link>
 
-  <link name="${side}_camera_link">
+  <!-- <link name="${side}_camera_link">
     <visual>
       <geometry>
         <mesh filename="package://inmoov_meshes/meshes/camera.stl" scale="0.001 0.001 0.001"/>
@@ -29,7 +29,7 @@
       <xacro:camera_color/>
     </visual>
     <xacro:camera_inertial/>
-  </link>
+  </link> -->
 
   <link name="${side}_eye_link">
     <visual>
@@ -53,11 +53,11 @@
     <xacro:iris_inertial/>
   </link>
 
-  <joint name="${side}_camera_joint" type="fixed">
+  <!-- <joint name="${side}_camera_joint" type="fixed">
     <origin rpy="0 0 0" xyz="-0.001 0 0"/>
     <parent link="${side}_eyesupport_link"/>
     <child link="${side}_camera_link"/>
-  </joint>
+  </joint> -->
 
   <joint name="${side}_eye_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0.003 0 0"/>

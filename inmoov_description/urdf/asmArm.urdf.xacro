@@ -39,6 +39,8 @@
     </xacro:if>
   </link>
 
+  <link name="${side}_bicep_link_aux_0"/>
+  <link name="${side}_bicep_link_aux_1"/>
   <link name="${side}_bicep_link">
     <visual>
       <geometry>
@@ -62,7 +64,6 @@
   </link>
 
   <link name="${side}_forearm_link_aux"/>
-
   <link name="${side}_forearm_link">
     <visual>
       <geometry>
@@ -71,12 +72,12 @@
       <origin rpy="0 0 0" xyz="${flip * 0.001} 0 0"/>
       <xacro:cover_color/>
     </visual>
-    <collision>
+    <!-- <collision>
       <geometry>
         <cylinder length="0.28" radius="0.045"/>
       </geometry>
       <origin rpy="0 0 0" xyz="-0.00 0 -0.14"/>
-    </collision>
+    </collision> -->
     <xacro:if value="${side == 'l'}">
       <xacro:l_forearm_inertial/>
     </xacro:if>
@@ -84,6 +85,21 @@
       <xacro:r_forearm_inertial/>
     </xacro:if>
   </link>
+
+  <joint name="${side}_shoulder_lift_joint_old" type="fixed">
+    <origin rpy="0 0 0" xyz="0 ${flip * -0.012} -0.04"/>
+    <parent link="${side}_shoulder_base_link"/>
+    <child link="${side}_shoulder_link"/>
+  </joint>
+
+  <joint name="${side}_shoulder_out_joint" type="revolute">
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="1745.32925199"/>
+    <!-- <origin rpy="0 0 0" xyz="0 0 0"/> -->
+    <origin rpy="0 0 0" xyz="0 ${flip * -0.066} -0.06"/>
+    <parent link="${side}_shoulder_link"/>
+    <child link="${side}_bicep_link_aux_0"/>
+  </joint>
 
   <joint name="${side}_shoulder_lift_joint" type="revolute">
     <axis xyz="0 1 0"/>
@@ -93,9 +109,9 @@
     <xacro:if value="${side == 'r'}">
       <limit effort="1000.0" lower="${r_shoulder_lift_joint_lower}" upper="${r_shoulder_lift_joint_upper}" velocity="${r_shoulder_lift_joint_velocity}" />
     </xacro:if>
-    <origin rpy="0 0 0" xyz="0 ${flip * -0.012} -0.04"/>
-    <parent link="${side}_shoulder_base_link"/>
-    <child link="${side}_shoulder_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="${side}_bicep_link_aux_0"/>
+    <child link="${side}_bicep_link_aux_1"/>
   </joint>
 
   <joint name="${side}_upper_arm_roll_joint" type="revolute">
@@ -106,8 +122,8 @@
     <xacro:if value="${side == 'r'}">
       <limit effort="1000.0" lower="${r_upper_arm_roll_joint_lower}" upper="${r_upper_arm_roll_joint_upper}" velocity="${r_upper_arm_roll_joint_velocity}" />
     </xacro:if>
-    <origin rpy="0 0 0" xyz="0 ${flip * -0.066} -0.06"/>
-    <parent link="${side}_shoulder_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="${side}_bicep_link_aux_1"/>
     <child link="${side}_bicep_link"/>
   </joint>
 
