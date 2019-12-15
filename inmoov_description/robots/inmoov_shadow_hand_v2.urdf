@@ -819,12 +819,6 @@
       </geometry>
     </collision>
   </link>
-  <joint name="rh_ee_fixed_joint" type="fixed">
-    <parent link="rh_palm"/>
-    <child link="rh_manipulator"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.05"/>
-  </joint>
-  <link name="rh_manipulator"/>
   <joint name="rh_WRJ1" type="revolute">
     <parent link="rh_wrist"/>
     <child link="rh_palm"/>
@@ -838,16 +832,6 @@
     <provideFeedback>1</provideFeedback>
     <implicitSpringDamper>1</implicitSpringDamper>
   </gazebo>
-  <transmission name="rh_palm_transmission">
-    <type>sr_mechanism_model/SimpleTransmission</type>
-    <actuator name="rh_WRJ1">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-    <joint name="rh_WRJ1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
-    </joint>
-  </transmission>
   <!-- prefix can be anything but usually is "r_" or  "l_" for right and left hands distinction -->
   <gazebo reference="rh_palm">
     <sensor name="rh_palm_contact" type="contact">
