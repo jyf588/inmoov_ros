@@ -34,17 +34,12 @@
   </material>
   <!-- <xacro:include filename="$(find sr_description)/other/xacro/gazebo/gazebo.urdf.xacro"/> -->
   <!-- usage: e.g. ${M_PI/4} -->
-  <link name="world"/>
-  <joint name="fixed" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
   <link name="base_link">
     <visual>
       <geometry>
         <cylinder length="0.11" radius="0.26"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0.055"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <material name="cbase">
         <color rgba="0.1 0.1 0.1 1"/>
       </material>
@@ -53,14 +48,14 @@
   <joint name="base_to_pedestal_link" type="fixed">
     <parent link="base_link"/>
     <child link="pedestal_link"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.58"/>
   </joint>
   <link name="pedestal_link">
     <visual>
       <geometry>
         <cylinder length="0.94" radius="0.0254"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 0.58"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <material name="cbase">
         <color rgba="0.1 0.1 0.1 1"/>
       </material>
@@ -84,14 +79,14 @@
   <joint name="pedestal_to_mid_stomach_joint" type="fixed">
     <parent link="pedestal_link"/>
     <child link="mid_stomach_link"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.572"/>
   </joint>
   <link name="mid_stomach_link">
     <visual>
       <geometry>
         <mesh filename="package://inmoov_meshes/meshes/mid_stomach.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0 1.152"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="cframe">
         <color rgba="0.40 0.40 0.40 1"/>
       </material>
@@ -184,7 +179,7 @@
     <child link="top_stomach_link"/>
   </joint> -->
   <joint name="waist_pan_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 1.152"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="mid_stomach_link"/>
     <child link="top_stomach_link"/>
   </joint>
