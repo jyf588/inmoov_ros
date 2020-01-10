@@ -638,7 +638,7 @@
   <joint name="r_elbow_flex_joint" type="revolute">
     <axis xyz="0 1 0"/>
     <limit effort="1000.0" lower="-3.14159265359" upper="0.0" velocity="1745.32925199"/>
-    <origin rpy="0 0 0" xyz="-0.03 0 -0.225"/>
+    <origin rpy="0 0 0" xyz="-0.054 -0.009 -0.2621"/>
     <parent link="r_bicep_link"/>
     <child link="r_forearm_link_aux"/>
   </joint>
@@ -679,7 +679,7 @@
   <joint name="r_wrist_roll_joint" type="fixed">
     <parent link="r_forearm_link"/>
     <child link="r_hand_link"/>
-    <origin rpy="3.14159265359 0 0" xyz="-0.015 0.01 -0.3"/>
+    <origin rpy="3.14159265359 0 0" xyz="0.0303 -0.00729 -0.302"/>
   </joint>
   <link name="rh_wrist">
     <inertial>
