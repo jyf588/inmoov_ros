@@ -289,27 +289,34 @@
       </geometry>
     </collision>
   </link>
-  <joint name="rh_WRJ1" type="fixed">
-    <parent link="rh_wrist"/>
-    <child link="rh_palm"/>
-    <origin rpy="0 0 0" xyz="0 0 0.03"/>
+<!--  <joint name="rh_WRJ1" type="revolute">-->
+<!--    <parent link="rh_wrist"/>-->
+<!--    <child link="rh_palm"/>-->
+<!--    <origin rpy="0 0 0" xyz="0 0 0.03"/>-->
 <!--    <axis xyz="1 0 0"/>-->
 <!--    &lt;!&ndash; this is the wrist flexion &ndash;&gt;-->
 <!--    <limit effort="30" lower="-1.57079632679" upper="1.57079632679" velocity="20.0"/>-->
 <!--    <dynamics damping="0.1"/>-->
+<!--  </joint>-->
+  <joint name="rh_WRJ1" type="fixed">
+    <parent link="rh_wrist"/>
+    <child link="rh_palm"/>
+    <origin rpy="0 0 0" xyz="0 0 0.03"/>
   </joint>
 
   <link name="obj">
     <visual>
       <geometry>
-        <cylinder length="0.20" radius="0.06"/>
+<!--        <cylinder length="0.20" radius="0.06"/>-->
+        <box size="0.08 0.08 0.20"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0.1"/>
       <material name="black"/>
     </visual>
     <collision>
       <geometry>
-        <cylinder length="0.20" radius="0.06"/>
+<!--        <cylinder length="0.20" radius="0.06"/>-->
+        <box size="0.08 0.08 0.20"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0.1"/>
     </collision>
@@ -324,12 +331,18 @@
     <parent link="rh_palm"/>
     <child link="obj"/>
 <!--    ref shadowhand_motor_simple_nomass.urdf-->
-<!--    p.invertTransform([-0.18, 0.095, 0.12], p.getQuaternionFromEuler([1.8, -1.57, 0]))-->
-    <origin rpy="-1.5708 0.2292 -1.5708" xyz="-0.11985664814710617, -0.15380138158798218, 0.13343362510204315"/>
+<!--    p.invertTransform([-0.18, 0.095, 0.11], p.getQuaternionFromEuler([1.8, -1.57, 0]))-->
+    <origin rpy="-1.570982165314285 -0.22920366351116048 -1.5699785493771878" xyz="-0.10985665023326874, -0.15379363298416138, 0.1334318220615387"/>
   </joint>
 
-  <link name="obj_z"/>
-    <joint name="rh_obj_j_z" type="fixed">
+  <link name="obj_z">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>>
+  <joint name="rh_obj_j_z" type="fixed">
     <parent link="obj"/>
     <child link="obj_z"/>
     <origin rpy="0 0 0" xyz="0 0 0.1"/>
