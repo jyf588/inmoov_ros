@@ -85,15 +85,28 @@
     </inertial>
   </link>
   <link name="r_forearm_link">
+<!--    <visual>-->
+<!--      <geometry>-->
+<!--        <mesh filename="package://inmoov_meshes/meshes/r_forearm.stl" scale="0.001 0.001 0.001"/>-->
+<!--      </geometry>-->
+<!--      <origin rpy="0 0 0" xyz="0.001 0 0"/>-->
+<!--      <material name="ccover">-->
+<!--        <color rgba="0.75 0.75 0.75 1.0"/>-->
+<!--      </material>-->
+<!--    </visual>-->
     <visual>
       <geometry>
-        <mesh filename="package://inmoov_meshes/meshes/r_forearm.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.06 0.06 0.2"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0.001 0 0"/>
-      <material name="ccover">
-        <color rgba="0.75 0.75 0.75 1.0"/>
-      </material>
+      <origin rpy="0 0 0" xyz="0.03 -0.00 -0.18"/>
+      <material name="black"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.06 0.06 0.2"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.03 -0.00 -0.18"/>
+    </collision>
     <inertial>
       <mass value="401.76659375"/>
       <inertia ixx="3.242307584" ixy="0.050011216" ixz="-0.14318512" iyy="3.24251008" iyz="0.086288976" izz="0.58458784"/>
