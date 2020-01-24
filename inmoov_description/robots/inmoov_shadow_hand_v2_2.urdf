@@ -176,36 +176,36 @@
       </geometry>
       <material name="LightGrey"/>
     </visual>
-    <collision>
-      <origin rpy="1.5708 1.5708 0" xyz="0 0 0"/>
-      <geometry name="rh_wrist_collision_geom">
-        <cylinder length="0.030" radius="0.0135"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 1.5708 0" xyz="-0.026 0 0.034"/>
-      <geometry>
-        <cylinder length="0.010" radius="0.011"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 1.5708 0" xyz="0.031 0 0.034"/>
-      <geometry>
-        <cylinder length="0.010" radius="0.011"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 0.7854 0" xyz="-0.021 0 0.011"/>
-      <geometry>
-        <box size="0.027 0.018 0.010"/>
-      </geometry>
-    </collision>
-    <collision>
-      <origin rpy="0 -0.7854 0" xyz="0.026 0 0.010"/>
-      <geometry>
-        <box size="0.027 0.018 0.010"/>
-      </geometry>
-    </collision>
+<!--    <collision>-->
+<!--      <origin rpy="1.5708 1.5708 0" xyz="0 0 0"/>-->
+<!--      <geometry name="rh_wrist_collision_geom">-->
+<!--        <cylinder length="0.030" radius="0.0135"/>-->
+<!--      </geometry>-->
+<!--    </collision>-->
+<!--    <collision>-->
+<!--      <origin rpy="0 1.5708 0" xyz="-0.026 0 0.034"/>-->
+<!--      <geometry>-->
+<!--        <cylinder length="0.010" radius="0.011"/>-->
+<!--      </geometry>-->
+<!--    </collision>-->
+<!--    <collision>-->
+<!--      <origin rpy="0 1.5708 0" xyz="0.031 0 0.034"/>-->
+<!--      <geometry>-->
+<!--        <cylinder length="0.010" radius="0.011"/>-->
+<!--      </geometry>-->
+<!--    </collision>-->
+<!--    <collision>-->
+<!--      <origin rpy="0 0.7854 0" xyz="-0.021 0 0.011"/>-->
+<!--      <geometry>-->
+<!--        <box size="0.027 0.018 0.010"/>-->
+<!--      </geometry>-->
+<!--    </collision>-->
+<!--    <collision>-->
+<!--      <origin rpy="0 -0.7854 0" xyz="0.026 0 0.010"/>-->
+<!--      <geometry>-->
+<!--        <box size="0.027 0.018 0.010"/>-->
+<!--      </geometry>-->
+<!--    </collision>-->
   </link>
   <gazebo reference="rh_wrist">
     <material>Gazebo/White</material>
