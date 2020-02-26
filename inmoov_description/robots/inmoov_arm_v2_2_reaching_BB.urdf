@@ -102,14 +102,14 @@
 
   <joint name="r_shoulder_out_joint" type="revolute">
     <axis xyz="1 0 0"/>
-    <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="1745.32925199"/>
+    <limit effort="1000.0" lower="-2.07079632679" upper="1.57079632679" velocity="1745.32925199"/>
     <origin rpy="0 0 0" xyz="0 -0.066 -0.06"/>
     <parent link="r_shoulder_link"/>
     <child link="r_bicep_link_aux_0"/>
   </joint>
   <joint name="r_shoulder_lift_joint" type="revolute">
     <axis xyz="0 1 0"/>
-    <limit effort="1000.0" lower="-1.57079632679" upper="1.57079632679" velocity="1745.32925199"/>
+    <limit effort="1000.0" lower="-2.07079632679" upper="1.57079632679" velocity="1745.32925199"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="r_bicep_link_aux_0"/>
     <child link="r_bicep_link_aux_1"/>
