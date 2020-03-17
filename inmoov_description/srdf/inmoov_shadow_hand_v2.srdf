@@ -31,6 +31,8 @@
     <disable_collisions link1="torso_link" link2="r_shoulder_base_link" reason="Adjacent" />
     <!-- <disable_collisions link1="torso_link" link2="r_shoulder_link" reason="Never" />
     <disable_collisions link1="torso_link" link2="r_bicep_link" reason="Never" />
+    <disable_collisions link1="r_forearm_link" link2="rh_wrist" reason="Never" />
+    <disable_collisions link1="r_forearm_link" link2="rh_palm" reason="Never" />
     <disable_collisions link1="torso_link" link2="r_bicepcover_link" reason="Never" /> -->
     <!-- <disable_collisions link1="r_shoulder_link" link2="r_bicepcover_link" reason="Never" />
     <disable_collisions link1="r_shoulder_base_link" link2="r_bicepcover_link" reason="Never" /> -->
