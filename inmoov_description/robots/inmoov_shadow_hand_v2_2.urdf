@@ -1534,7 +1534,7 @@
     <child link="rh_thproximal"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <axis xyz="1.0 0 0"/>
-    <limit effort="3" lower="0.0" upper="2.01" velocity="4.0"/>
+    <limit effort="3" lower="0.0" upper="1.2217304764" velocity="4.0"/>
     <dynamics damping="0.2"/>
   </joint>
   <gazebo reference="rh_THJ4">
@@ -1664,7 +1664,7 @@
     <child link="rh_thmiddle"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="2.0" lower="-0.698131700798" upper="1.2217304764" velocity="2.0"/>
+    <limit effort="2.0" lower="-0.698131700798" upper="0.6917304764" velocity="2.0"/>
     <dynamics damping="0.1"/>
   </joint>
   <gazebo reference="rh_THJ2">
