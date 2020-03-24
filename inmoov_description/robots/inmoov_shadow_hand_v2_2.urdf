@@ -248,6 +248,21 @@
       </geometry>
       <material name="Grey"/>
     </visual>
+<!--    moving BB-->
+<!--    <visual>-->
+<!--      <geometry>-->
+<!--        <box size="0.18 0.15 0.18"/>-->
+<!--      </geometry>-->
+<!--      <origin rpy="0 0 0" xyz="0.05 -0.06 0.1"/>-->
+<!--    </visual>-->
+<!--    &lt;!&ndash;    reaching BB&ndash;&gt;-->
+<!--    <visual>-->
+<!--      <geometry>-->
+<!--        <box size="0.10 0.10 0.18"/>-->
+<!--      </geometry>-->
+<!--      <origin rpy="0 0 0" xyz="0.02 -0.03 0.1"/>-->
+<!--      <material name="black"/>-->
+<!--    </visual>-->
     <collision>
       <origin rpy="0 0 0" xyz="0.011 0.0085 0.038"/>
       <geometry name="rh_palm_collision_geom">
