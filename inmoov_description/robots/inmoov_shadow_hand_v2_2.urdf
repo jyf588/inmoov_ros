@@ -85,21 +85,12 @@
     </inertial>
   </link>
   <link name="r_forearm_link">
-<!--    <visual>-->
-<!--      <geometry>-->
-<!--        <mesh filename="package://inmoov_meshes/meshes/r_forearm.stl" scale="0.001 0.001 0.001"/>-->
-<!--      </geometry>-->
-<!--      <origin rpy="0 0 0" xyz="0.001 0 0"/>-->
-<!--      <material name="ccover">-->
-<!--        <color rgba="0.75 0.75 0.75 1.0"/>-->
-<!--      </material>-->
-<!--    </visual>-->
+<!--    openrave cannot visualize primitive shape e.g. box-->
     <visual>
       <geometry>
-        <box size="0.06 0.06 0.2"/>
+        <mesh filename="package://inmoov_meshes/meshes/box-binary.stl" scale="0.06 0.06 0.2"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0.03 -0.00 -0.18"/>
-      <material name="black"/>
     </visual>
     <collision>
       <geometry>
